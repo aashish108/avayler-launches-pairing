@@ -1,0 +1,21 @@
+.launch {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid blue;
+  border-radius: 25px;
+  background: lightblue;
+  word-wrap: break-word;
+}
+
+.image {
+  width: 100px;
+  padding-top: 10px;
+}
+
+.success {
+  font-weight: bold;
+  color: green;
+}
