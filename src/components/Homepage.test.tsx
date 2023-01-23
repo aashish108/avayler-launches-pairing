@@ -10,6 +10,7 @@ test('Homepage has the relevant launch card info', async () => {
   expect(await screen.findByText(/coreIdTest/)).toBeInTheDocument;
   expect(await screen.findByText(/payloadIdTest/)).toBeInTheDocument();
   expect(await screen.findByText(/Success: false/)).toBeInTheDocument();
+  expect(await screen.findByText(/Engine failure at 33 seconds and loss of vehicle/)).toBeInTheDocument();
 });
 
 test('Homepage shows header', async () => {

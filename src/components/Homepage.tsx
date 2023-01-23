@@ -26,6 +26,7 @@ const Homepage = ({ launchesData, launchesError }) => {
               image={launch.links.patch.small}
               cores={launch.cores}
               success={launch.success}
+              details={launch.details}
             />
           ))}
       </div>

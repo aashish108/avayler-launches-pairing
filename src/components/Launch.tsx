@@ -10,7 +10,7 @@ type launchTypes = {
   cores: Core[];
 };
 
-const Launch = ({ name, date, payloads, image, success, cores }: launchTypes) => {
+const Launch = ({ name, date, payloads, image, success, cores, details }: launchTypes) => {
   return (
     <div className={styles.launch}>
       <img className={styles.image} src={image} alt={name} />
@@ -29,6 +29,7 @@ const Launch = ({ name, date, payloads, image, success, cores }: launchTypes) =>
         ))}
       </ul>
       <span className={styles.success}>Success: {success ? 'true' : 'false'}</span>
+      <span>{details}</span>
     </div>
   );
 };
