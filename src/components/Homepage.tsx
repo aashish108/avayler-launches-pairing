@@ -2,33 +2,34 @@ import { useMemo, useEffect, useState } from 'react';
 import Launch from './Launch';
 import styles from './homepage.module.css';
 
-const Homepage = () => {
+const Homepage = ({ launchesData, launchesError }) => {
   const [launchData, setLaunchData] = useState([]);
+  const [error, setError] = useState(null);
 
-  const fetchData = async () => {
-    const res = await fetch('/api/launches');
-    const data = await res.json();
-    setLaunchData(data.slice(0, 10));
-  };
   useEffect(() => {
-    fetchData();
+    setLaunchData(launchesData);
+    setError(launchesError);
   }, []);
 
   return (
-    <div className={styles.launchesContainer}>
-      {launchData.length &&
-        launchData.map((launch) => (
-          <Launch
-            key={launch.id}
-            name={launch.name}
-            date={launch.date_utc}
-            payloads={launch.payloads}
-            image={launch.links.patch.small}
-            cores={launch.cores}
-            success={launch.success}
-          />
-        ))}
-    </div>
+    <>
+      <h1>Launches Data</h1>
+      {error && <p>{error}</p>}
+      <div className={styles.launchesContainer}>
+        {launchData?.length &&
+          launchData.map((launch) => (
+            <Launch
+              key={launch.id}
+              name={launch.name}
+              date={launch.date_utc}
+              payloads={launch.payloads}
+              image={launch.links.patch.small}
+              cores={launch.cores}
+              success={launch.success}
+            />
+          ))}
+      </div>
+    </>
   );
 };
 
