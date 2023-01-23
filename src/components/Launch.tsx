@@ -8,6 +8,7 @@ type launchTypes = {
   image: string;
   success: boolean;
   cores: Core[];
+  details: string;
 };
 
 const Launch = ({ name, date, payloads, image, success, cores, details }: launchTypes) => {
