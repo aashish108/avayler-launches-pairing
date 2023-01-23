@@ -10,7 +10,7 @@ beforeEach(() => {
   fetchMock.resetMocks();
 });
 
-test('Homepage', async () => {
+test('Homepage has the relevant info', async () => {
   fetchMock.mockResponseOnce(JSON.stringify(response));
   render(<Homepage />);
 

@@ -13,6 +13,7 @@ type launchTypes = {
 const Launch = ({ name, date, payloads, image, success, cores }: launchTypes) => {
   return (
     <div className={styles.launch}>
+      <img className={styles.image} src={image} alt={name} />
       <span>Name: {name}</span>
       <span>Date: {date}</span>
       <span>
@@ -27,7 +28,6 @@ const Launch = ({ name, date, payloads, image, success, cores }: launchTypes) =>
           <li key={payload}>{payload}</li>
         ))}
       </ul>
-      <img className={styles.image} src={image} alt={name} />
       <span className={styles.success}>Success: {success ? 'true' : 'false'}</span>
     </div>
   );
